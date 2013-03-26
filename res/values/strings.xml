@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RunCalc</string>
+    <string name="interval">Intervals</string><string name="progression">Progression</string>
+    
+    <string name="menu_settings">Settings</string>
+    <string name="fartlek">Fartlek</string><string name="pyramid">Pyramid</string>
+    <string name="valley">Valley</string><string name="ladder">Ladder</string>
+    <string name="pace">Pace</string>
+    <string name="tempo">Tempo</string><string name="basic">Basic Runs</string>
+    
+    <string name="recovery">Recovery Run</string>
+    <string name="base">Base Run</string>
+    <string name="long_run">Long Run</string>
+    
+    
+
+</resources>
