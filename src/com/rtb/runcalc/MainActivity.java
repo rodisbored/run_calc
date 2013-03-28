@@ -2,6 +2,8 @@ package com.rtb.runcalc;
 
 import java.util.Locale;
 
+import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -11,6 +13,7 @@ import android.support.v4.view.ViewPager;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -65,6 +68,22 @@ public class MainActivity extends FragmentActivity
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
     }
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) 
+    {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.menu_settings:
+                startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+                return true;
+            case R.id.menu_about:
+                startActivity(new Intent(MainActivity.this, AboutActivity.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
@@ -80,7 +99,6 @@ public class MainActivity extends FragmentActivity
      */
     public class SectionsPagerAdapter extends FragmentPagerAdapter
     {
-
         public SectionsPagerAdapter(FragmentManager fm)
         {
             super(fm);
@@ -167,6 +185,7 @@ public class MainActivity extends FragmentActivity
 
         public IntervalFragment()
         {
+//            ExpandableListView
         }
 
         @Override
@@ -176,24 +195,41 @@ public class MainActivity extends FragmentActivity
             // number argument value.
             LinearLayout mLinearLayout = (LinearLayout) inflater.inflate(R.layout.interval_layout,
                     container, false);
-            
-            Button mButton = (Button) mLinearLayout.findViewById(R.id.pyramid_button);
-            mButton.setOnClickListener(new OnClickListener() 
-            {
-                @Override
-                public void onClick(View v) 
-                {
-                    // here you set what you want to do when user clicks your button,
-                    // e.g. launch a new activity
-                }
-            });
-            
-            TextView textView = new TextView(getActivity());
-            textView.setGravity(Gravity.CENTER);
-            textView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
+
+//            Button pyramidButton = (Button) mLinearLayout.findViewById(R.id.pyramid_button);
+//            pyramidButton.setOnClickListener(new OnClickListener() 
+//            {
+//                @Override
+//                public void onClick(View v) 
+//                {
+////                    FragmentTransaction ft = this.getFragmentManager().beginTransaction();
+////                    Fragment mFragment = Fragment.instantiate(this.Activity(), Fragment2.class.getName());
+////                    ft.replace(android.R.id.content, mFragment);
+////                    ft.commit();
+//                    // here you set what you want to do when user clicks your button,
+//                    // e.g. launch a new activity
+//                }
+//            });
+//            
+//            Button valleyButton = (Button) mLinearLayout.findViewById(R.id.valley_button);
+//            valleyButton.setOnClickListener(new OnClickListener() 
+//            {
+//                @Override
+//                public void onClick(View v) 
+//                {
+//                }
+//            });
+//            
+//            Button ladderButton = (Button) mLinearLayout.findViewById(R.id.ladder_button);
+//            valleyButton.setOnClickListener(new OnClickListener() 
+//            {
+//                @Override
+//                public void onClick(View v) 
+//                {
+//                }
+//            });
             
             return mLinearLayout;
-//            return textView;
         }
     }
     

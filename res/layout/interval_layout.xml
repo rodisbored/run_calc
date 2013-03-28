@@ -1,36 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent" 
-    android:gravity="center" >
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
 
-    <Button
-        android:id="@+id/pyramid_button"
+    <Spinner
+        android:id="@+id/intervalSpinner"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
-        android:paddingTop="30dp"
-        android:paddingBottom="30dp"
-        android:text="@+string/pyramid" />
-
-    <Button
-        android:id="@+id/valley_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
-        android:paddingTop="30dp"
-        android:paddingBottom="30dp"
-        android:text="@+string/valley" />
-
-    <Button
-        android:id="@+id/ladder_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
-        android:paddingTop="30dp"
-        android:paddingBottom="30dp"
-        android:text="@+string/ladder" />
+        android:layout_height="wrap_content" 
+        android:entries="@array/interval_types" />
 </TableLayout>
